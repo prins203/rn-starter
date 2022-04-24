@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, FlatList } from "react-native";
 
 const ColorScreen = () => {
     const [colors, setColors] = useState([]);
+    console.log(colors);
 
     return(
         <View>
@@ -15,7 +16,7 @@ const ColorScreen = () => {
                 data={colors}
                 keyExtractor={(color) => color}
                 renderItem={({item}) => {
-                    return <View style={styles.viewStyle, {backgroundColor:item}}></View>;
+                    return <View style={[styles.viewStyle, {backgroundColor: item}]}></View>;
                 }}
             />
         </View>
@@ -33,7 +34,7 @@ const randRGB = () => {
 const styles = StyleSheet.create({
     viewStyle: {
         height: 50,
-        width: 50
+        width: 50,
     }
 });
 
